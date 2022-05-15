@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/material-icons/iconfont/material-icons.css")
+    link(rel="stylesheet" href="/styles/main.css")
+    script(src="/tinymce/tinymce.min.js")
+    script(src="/js/tinymce.config.js")
+  body
+    include header.pug
+    if hasMessages
+      each message in messages
+        .container.alert.alert-danger(role='alert')= message
+    block content
+    script(src="/bootstrap/dist/js/bootstrap.bundle.min.js")
